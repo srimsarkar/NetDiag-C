@@ -1,0 +1,24 @@
+# Build Artifacts
+build/
+bin/
+obj/
+*.o
+*.a
+*.so
+*.dylib
+*.out
+
+# Executables
+netdiag
+test_diagnostics
+
+# Logs
+logs/*.log
+!logs/.gitkeep
+
+# IDE & OS Metadata
+.DS_Store
+.vscode/
+.idea/
+*.swp
+*~

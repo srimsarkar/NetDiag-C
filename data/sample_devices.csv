@@ -1,0 +1,12 @@
+# ==============================================================================
+# NetDiag-C Sample Monitored Devices Inventory
+# Format: id,name,ip_address,type,has_transceiver,xcvr_serial,xcvr_part,xcvr_form,wavelength_nm
+# ==============================================================================
+DEV-RTR-CORE01,Core Border Gateway,10.0.0.1,ROUTER,true,OPT-QSFP-9901,QSFP28-100G-LR4,QSFP28,1310.0
+DEV-RTR-EDGE02,Edge Aggregation Router,10.0.0.2,ROUTER,true,OPT-SFP-7712,SFP-10G-LR,SFP+,1310.0
+DEV-SW-DIST01,Distribution Spine Switch,10.0.1.1,SWITCH,true,OPT-QSFP-9902,QSFP28-100G-SR4,QSFP28,850.0
+DEV-SW-LEAF02,Leaf Access Switch 02,10.0.1.2,SWITCH,true,OPT-SFP-5541,SFP-10G-SR,SFP+,850.0
+DEV-OLT-METRO1,Metro Optical Line Terminal,10.0.2.1,OPTICAL_TERMINAL,true,OPT-XFP-3320,XFP-10G-ER,XFP,1550.0
+DEV-GW-SEC01,Datacenter Security Gateway,10.0.3.1,GATEWAY,true,OPT-SFP-8842,SFP-10G-LR,SFP+,1310.0
+DEV-SRV-APP01,High-Performance Compute Node,10.0.4.10,SERVER,false,,,,
+DEV-SRV-DB01,Database Primary Cluster,10.0.4.20,SERVER,false,,,,

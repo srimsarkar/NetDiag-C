@@ -59,7 +59,7 @@ Device *device_registry_find_by_id(DeviceRegistry *registry, const char *id) {
 int device_registry_load_csv(DeviceRegistry *registry, const char *csv_path) {
     if (!registry || !csv_path) return -1;
     
-    FILE *fp = fopen(csv_path, "r");
+    FILE *fp = utils_fopen_search(csv_path, "r");
     if (!fp) {
         LOG_ERROR("Unable to open device inventory CSV file: '%s'", csv_path);
         return -1;

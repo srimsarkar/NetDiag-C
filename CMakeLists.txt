@@ -32,3 +32,8 @@ target_link_libraries(test_diagnostics PRIVATE netdiag_core)
 
 enable_testing()
 add_test(NAME DiagnosticUnitTest COMMAND test_diagnostics)
+
+# Copy config and data directories into binary directory for direct execution
+file(COPY ${CMAKE_CURRENT_SOURCE_DIR}/config DESTINATION ${CMAKE_CURRENT_BINARY_DIR})
+file(COPY ${CMAKE_CURRENT_SOURCE_DIR}/data DESTINATION ${CMAKE_CURRENT_BINARY_DIR})
+

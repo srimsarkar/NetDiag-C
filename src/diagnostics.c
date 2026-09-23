@@ -52,7 +52,7 @@ int diagnostics_load_thresholds(const char *config_path, ThresholdConfig *cfg) {
         return 0;
     }
     
-    FILE *fp = fopen(config_path, "r");
+    FILE *fp = utils_fopen_search(config_path, "r");
     if (!fp) {
         LOG_WARN("Could not open threshold config file '%s'. Using built-in defaults.", config_path);
         return -1;

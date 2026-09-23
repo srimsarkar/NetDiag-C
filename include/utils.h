@@ -3,6 +3,7 @@
 
 #include <stddef.h>
 #include <stdbool.h>
+#include <stdio.h>
 
 /* ANSI Terminal Color Codes */
 #define COLOR_RESET   "\033[0m"
@@ -64,5 +65,12 @@ int utils_create_dir_if_missing(const char *dir_path);
  * Returns 0 on success, negative error code on failure.
  */
 int utils_ensure_parent_dir(const char *file_path);
+
+/**
+ * Attempts to open a file at rel_path, and if not found and relative,
+ * checks parent directories (../ and ../../) as fallbacks.
+ * Returns FILE pointer if opened, or NULL.
+ */
+FILE *utils_fopen_search(const char *rel_path, const char *mode);
 
 #endif /* NETDIAG_UTILS_H */

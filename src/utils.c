@@ -148,3 +148,27 @@ int utils_ensure_parent_dir(const char *file_path) {
     *last_slash = '\0';
     return utils_create_dir_if_missing(dir_path);
 }
+
+FILE *utils_fopen_search(const char *rel_path, const char *mode) {
+    if (!rel_path || !mode) return NULL;
+    
+    /* 1. Try directly */
+    FILE *fp = fopen(rel_path, mode);
+    if (fp) return fp;
+    
+    /* If path is absolute, do not search relative parent directories */
+    if (rel_path[0] == '/') return NULL;
+    
+    /* 2. Try 1 level up (e.g., when executed from build/ or bin/) */
+    char buf[512];
+    snprintf(buf, sizeof(buf), "../%s", rel_path);
+    fp = fopen(buf, mode);
+    if (fp) return fp;
+    
+    /* 3. Try 2 levels up (e.g., when executed from build/bin/) */
+    snprintf(buf, sizeof(buf), "../../%s", rel_path);
+    fp = fopen(buf, mode);
+    if (fp) return fp;
+    
+    return NULL;
+}

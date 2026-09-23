@@ -1,0 +1,4 @@
+device_id,name,ip_address,rtt_ms,packet_loss_pct,bandwidth_utilization_pct,crc_errors,rx_power_dbm,tx_power_dbm,temperature_c
+DEV-DEMO-01,Core Gateway Router,10.10.0.1,367.0,22.08,97.4,2618,-18.72,-5.57,66.3
+DEV-DEMO-02,Spine Switch,10.10.0.2,245.0,15.50,96.2,1240,-18.10,-5.90,68.0
+DEV-DEMO-03,Application Server,10.10.0.50,310.0,18.00,98.1,1875,N/A,N/A,N/A
